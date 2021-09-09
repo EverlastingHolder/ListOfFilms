@@ -6,6 +6,8 @@ extension FilmsList {
         @Environment(\.filmsService) var service
         @Published var films: [Int: [Film]] = [:]
         @Published var state: StateView = .fail
+        @Published var isActive: Bool = false
+        @Published var selectedFilm: Film = Film(id: 0, localized_name: "", name: "", year: 0, rating: 0, image_url: "", description: "", genres: [])
         
         override init() {
             super.init()
